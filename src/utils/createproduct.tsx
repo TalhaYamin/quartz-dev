@@ -1,4 +1,4 @@
-import { FormData } from "@/app/CreateItem/Page";
+import { FormData } from "@/app/CreateItem/page";
 import { ProductT } from "@/types/product/type";
 
 

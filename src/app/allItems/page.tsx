@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "@/components/CustomProductCard";
 import getAllProducts from "@/utils/getProducts";
 import "tailwindcss/tailwind.css";
-import CreateItem from "../CreateItem/Page";
 import CustomSpinner from "@/components/CustomSpinner";
 import { ProductT } from "@/types/product/type";
+import CreateItem from "../CreateItem/page";
 
 const AllItems = () => {
     const [allProducts, setProducts] = useState<ProductT[]>([]);
