@@ -16,7 +16,7 @@ interface CreateItemProps {
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const page: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
+const Page: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
     const [formData, setFormData] = useState<FormData>({
         title: "",
         price: null,
@@ -180,4 +180,4 @@ const page: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
     );
 };
 
-export default page;
+export default Page;
