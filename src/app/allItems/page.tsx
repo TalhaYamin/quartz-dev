@@ -8,7 +8,7 @@ import CreateItem from "../CreateItem/Page";
 import CustomSpinner from "@/components/CustomSpinner";
 import { ProductT } from "@/types/product/type";
 
-const page = () => {
+const AllItems = () => {
     const [allProducts, setProducts] = useState<ProductT[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [showModal, setShowModal] = useState<boolean>(false);
@@ -99,4 +99,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default AllItems;
