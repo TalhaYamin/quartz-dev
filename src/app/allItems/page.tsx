@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "@/components/CustomProductCard";
 import getAllProducts from "@/utils/getProducts";
 import "tailwindcss/tailwind.css";
-import CreateItem from "../CreateItem/page";
+import CreateItem from "../CreateItem/Page";
 import CustomSpinner from "@/components/CustomSpinner";
 import { ProductT } from "@/types/product/type";
 
-const AllItems = () => {
+const page = () => {
     const [allProducts, setProducts] = useState<ProductT[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [showModal, setShowModal] = useState<boolean>(false);
@@ -99,4 +99,4 @@ const AllItems = () => {
     );
 };
 
-export default AllItems;
+export default page;

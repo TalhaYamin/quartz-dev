@@ -1,16 +1,17 @@
 'use client'
 
+import React, { useEffect, useState } from 'react'
 import {
   Card,
   CardBody,
   Typography,
 } from "@material-tailwind/react";
-import { fetchSingleProduct } from '@/utils/getSingleProduct';
-import React, { useEffect, useState } from 'react'
+// import { fetchSingleProduct } from '@/utils/getSingleProduct';
 import CustomSpinner from '@/components/CustomSpinner';
 import CustomCarousel from '@/components/CustomCarousel';
 import { ProductT } from '@/types/product/type';
 import { useParams, useRouter } from 'next/navigation';
+import { fetchSingleProduct } from '@/utils/getSingleProduct';
 
 
 const Page = () => {

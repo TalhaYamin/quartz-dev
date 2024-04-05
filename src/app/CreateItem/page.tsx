@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, ChangeEvent } from "react";
 import createProduct from "@/utils/createproduct";
 
@@ -14,7 +16,7 @@ interface CreateItemProps {
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
+const Test: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
     const [formData, setFormData] = useState<FormData>({
         title: "",
         price: null,
@@ -178,4 +180,4 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
     );
 };
 
-export default CreateItem;
+export default Test;

@@ -1,7 +1,7 @@
 import React from 'react'
 import AllItems from './allItems/page'
 
-const Page = () => {
+const page = () => {
     return (
         <div>
             <AllItems />
@@ -9,4 +9,4 @@ const Page = () => {
     )
 }
 
-export default Page
+export default page
