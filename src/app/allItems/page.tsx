@@ -6,7 +6,7 @@ import getAllProducts from "@/utils/getProducts";
 import "tailwindcss/tailwind.css";
 import CustomSpinner from "@/components/CustomSpinner";
 import { ProductT } from "@/types/product/type";
-import CreateItem from "../CreateItem/Page";
+import CreateItem from "@/app/CreateItem/Page"
 
 const AllItems = () => {
     const [allProducts, setProducts] = useState<ProductT[]>([]);

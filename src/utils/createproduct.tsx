@@ -1,4 +1,3 @@
-import { FormData } from "@/app/CreateItem/Page";
 import { ProductT } from "@/types/product/type";
 
 
@@ -6,6 +5,14 @@ interface ApiResponse {
     success: boolean;
     data?: ProductT;
     error?: string;
+}
+
+interface FormData {
+    title: string;
+    price: number | null;
+    description: string;
+    categoryId: number;
+    images: string[];
 }
 
 const createProduct = async (payload: FormData): Promise<ApiResponse> => {

@@ -3,7 +3,7 @@
 import React, { useState, ChangeEvent } from "react";
 import createProduct from "@/utils/createproduct";
 
-export interface FormData {
+interface FormData {
     title: string;
     price: number | null;
     description: string;
@@ -11,12 +11,13 @@ export interface FormData {
     images: string[];
 }
 
-interface CreateItemProps {
+interface PageProps {
     showModal: boolean;
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
+const CreateItem: React.FC<PageProps> = ({ showModal, setShowModal }) => {
+
     const [formData, setFormData] = useState<FormData>({
         title: "",
         price: null,
@@ -182,6 +183,6 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
             ) : null}
         </>
     );
-};
+}
 
 export default CreateItem;

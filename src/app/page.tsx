@@ -1,5 +1,5 @@
 import React from "react";
-import AllItems from "./allItems/page";
+import AllItems from "./allItems/Page";
 
 const page = () => {
     return (
