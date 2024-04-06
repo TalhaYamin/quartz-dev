@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, ChangeEvent } from "react";
 import createProduct from "@/utils/createproduct";
@@ -22,10 +22,12 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
         price: null,
         description: "",
         categoryId: 1,
-        images: []
+        images: [],
     });
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (
+        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
@@ -33,7 +35,7 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
     const handleAddImage = () => {
         setFormData({
             ...formData,
-            images: [...formData.images, ""]
+            images: [...formData.images, ""],
         });
     };
 
@@ -43,7 +45,7 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
             price: null,
             description: "",
             categoryId: 1,
-            images: []
+            images: [],
         });
         setShowModal(false);
     };
@@ -53,7 +55,7 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
         updatedImages[index] = value;
         setFormData({
             ...formData,
-            images: updatedImages
+            images: updatedImages,
         });
     };
 
@@ -64,7 +66,7 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
                 price: formData.price,
                 description: formData.description,
                 categoryId: formData.categoryId,
-                images: formData.images.filter((image) => image.trim() !== "")
+                images: formData.images.filter((image) => image.trim() !== ""),
             };
 
             const response = await createProduct(payload);
@@ -74,11 +76,10 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
                     price: null,
                     description: "",
                     categoryId: 1,
-                    images: []
+                    images: [],
                 });
                 setShowModal(false);
             }
-
         } catch (error) {
             console.error("Error creating item:", error);
         }
@@ -86,9 +87,10 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
 
     const isAnyFieldEmpty =
         formData.title === "" ||
-        formData.price === undefined || formData.price === null ||
+        formData.price === undefined ||
+        formData.price === null ||
         formData.description === "" ||
-        formData.images.some(imageUrl => imageUrl === "");
+        formData.images.some((imageUrl) => imageUrl === "");
 
     return (
         <>
@@ -98,9 +100,7 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
                         <div className="relative w-auto my-6 mx-auto max-w-3xl">
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                                    <h3 className="text-3xl font-semibold">
-                                        Create Item
-                                    </h3>
+                                    <h3 className="text-3xl font-semibold">Create Item</h3>
                                     <button
                                         className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                                         onClick={() => setShowModal(false)}
@@ -123,7 +123,9 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
                                         type="number"
                                         name="price"
                                         placeholder="Price"
-                                        value={formData?.price !== null ? formData.price.toString() : ''}
+                                        value={
+                                            formData?.price !== null ? formData.price.toString() : ""
+                                        }
                                         onChange={handleChange}
                                         className="mb-3 w-full p-2 border border-gray-300 rounded"
                                     />
@@ -140,7 +142,9 @@ const CreateItem: React.FC<CreateItemProps> = ({ showModal, setShowModal }) => {
                                                 type="text"
                                                 placeholder={`Image URL ${index + 1}`}
                                                 value={imageUrl}
-                                                onChange={(e) => handleChangeImage(index, e.target.value)}
+                                                onChange={(e) =>
+                                                    handleChangeImage(index, e.target.value)
+                                                }
                                                 className="w-full p-2 border border-gray-300 rounded"
                                             />
                                         </div>
